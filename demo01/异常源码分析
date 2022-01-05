@@ -1,0 +1,68 @@
+ new ArithmeticException();
+
+ 查看 ArithmeticException源码:
+ public class ArithmeticException extends RuntimeException {
+     private static final long serialVersionUID = 2256477558314496007L;
+
+     public ArithmeticException() {
+         super();
+     }
+
+     public ArithmeticException(String s) {
+         super(s);
+     }
+ }
+结论: 只有调用父类的构造器 有参/无参
+
+RuntimeException{
+
+static final long serialVersionUID = -7034897190745766939L;
+
+    public RuntimeException() {
+        super();
+    }
+
+    public RuntimeException(String message) {
+        super(message);
+    }
+
+    public RuntimeException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public RuntimeException(Throwable cause) {
+        super(cause);
+    }
+
+    protected RuntimeException(String message, Throwable cause,
+                               boolean enableSuppression,
+                               boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+
+}
+Exception{
+    public Exception() {
+        super();
+    }
+
+    public Exception(String message) {
+        super(message);
+    }
+
+    public Exception(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public Exception(Throwable cause) {
+        super(cause);
+    }
+
+    protected Exception(String message, Throwable cause,
+                        boolean enableSuppression,
+                        boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+}
+结论: ArithmeticException只有调用父类的构造器,自己什么都没有做, 异常的打印都是
+Throwable 实现
